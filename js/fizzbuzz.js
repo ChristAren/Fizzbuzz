@@ -1,20 +1,36 @@
 
-// This uses an anonymous function to call a named function
-document.getElementById("fizzbutton").addEventListener("click", function(){
-    let num1 = document.getElementById("input1").value;
-    let num2 = document.getElementById("input2").value;
-    if(num1 > num2) {
-        alert("Number 1 must be less than Number 2");
+
+
+function FizzBuzz(value1, value2){
+    let returnArray= [];
+    returnArray[0]="";
+    for (let loop =1; loop <= 100; loop++){
+        returnArray[loop] = ((loop%value1==0 ? 'Fizz' : '') + (loop%value2==0 ? 'Buzz' : '') || loop);
+    }   
+    return returnArray; 
+}
+
+
+
+function buzzTable(){
+    let output = [];
+    let headTemplate = document.getElementById("fizzheader");
+    let rowTemplate = document.getElementById("fizzbuzz-row-items");
+
+    let templateHTML = headTemplate.innerHTML;
+    let resultsHTML = rowTemplate.innerHTML;
+
+    let val1 = parseInt(document.getElementById("FizzValue").value);
+    let val2 = parseInt(document.getElementById("BuzzValue").value);
+
+    output = FizzBuzz(val1,val2);
+    for(loop=1; loop<output.length; loop +=5){
+        resultsHTML += templateHTML.replace('{{val1}}', output[loop])
+                                        .replace('{{val2}}', output[loop+1])
+                                        .replace('{{val3}}', output[loop+2])
+                                        .replace('{{val4}}', output[loop+3])
+                                        .replace('{{val5}}', output[loop+4]);
     }
-
-    runTheNumbers(num1, num2)
-});
-
-// This is the named function, it will only run when something else calls it
-function runTheNumbers(num1, num2){
-    for (let loop =num1; loop <= num2; loop++) {
-        document.getElementById("result").innerText += loop;
-    }    
 }
 
 // The premise of FizzBuzz is to take 2 user inputs and find all of their multiples between 1 and 100

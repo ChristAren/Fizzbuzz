@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/fizzbuzz.css">
+    <link rel="stylesheet" href="css/prism.css">
   </head>
   <body>
       <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #ff993b;">
@@ -38,24 +39,38 @@
 <div class="container pt-5">
     <div class="row">
         <div class="col form-group">
-            <input class="form-control" id="input1" placeholder="Enter a number" type="number" />
+            <input class="form-control" id="FizzValue" placeholder="Enter a number" type="number" />
         </div>
         <div class="col form-group">
-            <input class="form-control" id="input2" placeholder="Enter a number" />
+            <input class="form-control" id="BuzzValue" placeholder="Enter a number" type="number">
         </div>
     </div>
     <div class="row">
         <div class="col-6 offset-3 form-group">
-            <button class="btn btn-outline-danger btnWide" id="fizzbutton">Click Me</button>
+            <button class="btn btn-outline-danger btnWide" onclick="buzzTable()">FizzBuzz It</button>
         </div>
     </div>
-    <div class="row">
-        <div class="col-4 offset-6">
-            <p>I will show results</p>
-            <hr />
-            <p id="result"></p>
-        </div>
-    </div>
+</div>
+<div style="overflow-x:auto">
+     <table id="results">
+
+    </table>
+</div>
+<script id="fizzheader" type="text/template">
+    <thead>
+        <tr><th colspan="5">results</th></tr>
+    </thead>
+</script>
+<script id="fizzbuzz-row-items" type="text/template">
+<tr>
+    <td>{{val1}}</td>
+    <td>{{val2}}</td>
+    <td>{{val3}}</td>
+    <td>{{val4}}</td>
+    <td>{{val5}}</td>
+</tr>
+</script>
+
 </div>
 
     <!-- Optional JavaScript -->
@@ -64,5 +79,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/fizzbuzz.js"></script>
+    <script src="js/prism.js"></script>
   </body>
 </html>
