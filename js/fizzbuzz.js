@@ -1,6 +1,5 @@
 function FizzBuzz(value1, value2) {
   let returnArray = [];
-  returnArray[0] = "";
   for (let loop = 1; loop <= 100; loop++) {
     returnArray[loop] =
       (loop % value1 == 0 ? "Fizz" : "") + (loop % value2 == 0 ? "Buzz" : "") ||
